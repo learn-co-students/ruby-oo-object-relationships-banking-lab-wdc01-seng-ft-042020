@@ -17,4 +17,28 @@ class BankAccount
         self.balance += cash
     end
 
+    def display_balance
+      "Your balance is $#{self.balance}."
+    end 
+
+    def valid?
+        if self.balance > 0 
+            if self.status == "open"
+                return true
+            end 
+        end 
+        false 
+    end 
+
+    def close_account
+        self.status = "closed"
+    end 
+
+
+
 end
+
+# account =BankAccount.new("mert")
+# account.deposit(-1200)
+# puts account.valid?
+
